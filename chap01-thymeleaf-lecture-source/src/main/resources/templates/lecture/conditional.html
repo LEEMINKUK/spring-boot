@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>conditional</title>
+</head>
+<body>
+    <h1 align="center">제어문</h1>
+
+    <h2>th: if, th:unless</h2>
+    <h3>
+        th:if는 변수 표현식의 OGNL 을 활용한 조건식으로 조건문을 작성하면 결과가 true 일 때 해당 태그 범위가 처리된다.
+        th:unless 는 표현식의 OGNL 을 활용한 결과가 false 일 때 태그 범위가 처리된다.
+    </h3>
+
+    <p th:if="${num > 0 }">넘어온 값은 0보다 크다.</p>   <!--/* if문 */-->
+    <p th:if="${num < 0 }">넘어온 값은 0보다 작다.</p>
+    <p th:unless="${ num < 0 }"> 넘어온 값은 0보다 크다</p> <!--/* else 문 */-->
+
+
+    <!--/* OGNL 표현식 */-->
+    <th:block th:if="${str =='사과'}">
+        <p>사과 좋아요</p>
+    </th:block>
+    <th:block th:if="${str == '바나나'}">
+        <p>바나나 좋아요</p>
+    </th:block>
+
+
+</body>
+</html>
