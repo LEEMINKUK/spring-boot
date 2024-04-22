@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        const successMessage = `[[${successMessage}]]`;
+        if (successMessage){
+            alert(successMessage)
+        }
+    </script>
+</head>
+<body>
+    <div th:replace="common/header.html"></div>
+    <form align="center" action="/menu/update2" method="post">
+    <h3>메뉴 수정</h3>
+        <label>메뉴 코드 : </label><input type="number" name="code"><br>
+        <label>메뉴 이름 : </label><input type="text" name="name"><br>
+        <label>메뉴 가격 : </label><input type="number" name="price"><br>
+        <label>카테고리 코드 : </label>
+        <select name="categoryCode" id="categoryCode"></select><br>
+        <label>판매 상태 : </label>
+        <select name="orderableStatus">
+            <option value="Y">Y</option>
+            <option value="N">N</option>
+        </select>
+        <input type="submit" value="전송">
+    </form>
+    <hr>
+
+    <table align="center" border="1">
+        <tr>
+            <th>메뉴 번호</th>
+            <th>메뉴 이름</th>
+            <th>메뉴 가격</th>
+            <th>카테고리 코드</th>
+            <th>판매 상태</th>
+        </tr>
+        <tr th:each="menu:${menuList}">
+            <td th:text="${menu.code}"></td>
+            <td th:text="${menu.name}"></td>
+            <td th:text="${menu.price}"></td>
+            <td th:text="${menu.categoryCode}"></td>
+            <td th:text="${menu.orderableStatus}"></td>
+        </tr>
+    </table>
+
+    <script>
+        fetch("/menu/category")
+            .then(res => res.json())
+            .then(data => {
+                const $categoryCode = document.getElementById("categoryCode");
+
+                for (let index in data){
+                    const $option = document.createElement('option');
+                    $option.value = data[index].code;
+                    $option.text = data[index].name;
+
+                    $categoryCode.appendChild($option);
+                }
+            });
+    </script>
+
+</body>
+</html>

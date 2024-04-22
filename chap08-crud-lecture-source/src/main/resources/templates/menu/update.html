@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+    <div th:replace="common/header.html"></div>
+
+        <form action="/menu/update2">
+            <table align="center" border="1">
+                <tr>
+                    <th> 선 택 </th>
+                    <th>메뉴 번호</th>
+                    <th>메뉴 이름</th>
+                    <th>메뉴 가격</th>
+                    <th>카테고리 코드</th>
+                    <th>판매 상태</th>
+                </tr>
+
+                <tr th:each="menu:${menuList}">
+                    <td><input th:value="|${menu.code}|" name="code" type="submit"></td>
+                    <td th:text="${menu.code}"></td>
+                    <td th:text="${menu.name}"></td>
+                    <td th:text="${menu.price}"></td>
+                    <td th:text="${menu.categoryCode}"></td>
+                    <td th:text="${menu.orderableStatus}"></td>
+                </tr>
+            </table>
+        </form>
+</body>
+</html>
