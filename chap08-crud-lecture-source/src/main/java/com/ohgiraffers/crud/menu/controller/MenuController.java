@@ -4,13 +4,10 @@ package com.ohgiraffers.crud.menu.controller;
 import com.ohgiraffers.crud.menu.model.dto.CategoryDTO;
 import com.ohgiraffers.crud.menu.model.dto.MenuDTO;
 import com.ohgiraffers.crud.menu.model.service.MenuService;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import java.util.List;
 
 @Controller
@@ -19,9 +16,6 @@ import java.util.List;
 public class MenuController {
 
     private final MenuService menuService;
-
-
-
 
     public MenuController(MenuService menuService){
         this.menuService = menuService;
