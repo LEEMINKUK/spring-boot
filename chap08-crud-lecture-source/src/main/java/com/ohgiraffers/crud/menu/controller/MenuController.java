@@ -66,7 +66,7 @@ public class MenuController {
 
         model.addAttribute("menuList", menuList);
 
-        return "menu/update";
+        return "/menu/update";
     }
 
     @GetMapping("/update2")
@@ -87,6 +87,22 @@ public class MenuController {
         rttr.addFlashAttribute("successMessage", "수정 성공");
 
         return "redirect:/menu/update2";
+    }
+    @GetMapping("/delete")
+    public String delete(Model model){
+        List<MenuDTO> menuList = menuService.findAllMenu();
+        for (MenuDTO menus : menuList){
+            System.out.println("menus = " + menus);
+        }
+        model.addAttribute("menuList", menuList);
+        return "/menu/delete";
+    }
+    @PostMapping("/delete")
+    public String delete2(MenuDTO menuDTO, RedirectAttributes rttr){
+        menuService.deleteMenu(menuDTO);
+        rttr.addFlashAttribute("successMessage", "삭제 성공");
+
+        return "redirect:/menu/delete";
     }
 
 }

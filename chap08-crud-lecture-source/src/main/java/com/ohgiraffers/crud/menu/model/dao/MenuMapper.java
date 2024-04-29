@@ -17,4 +17,6 @@ public interface MenuMapper {
     void registNewMenu(MenuDTO newMenu);
 
     void updateMenu(MenuDTO menuDTO);
+
+    void deleteMenu(MenuDTO menuDTO);
 }
