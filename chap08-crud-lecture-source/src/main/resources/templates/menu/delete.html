@@ -13,12 +13,11 @@
 <body>
     <div th:include="common/header.html"></div>
 
-    <form action="/menu/delete">
+
         <form align="center" action="/menu/delete" method="post">
             <h3>메뉴 삭제</h3>
             <label>메뉴 코드 : </label><input type="number" name="code" placeholder="메뉴 코드"><br>
             <input type="submit" value="전송">
-        </form>
         <hr>
 
         <table align="center" border="1">

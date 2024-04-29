@@ -66,8 +66,7 @@
     </update>
 
     <delete id="deleteMenu" parameterType="com.ohgiraffers.crud.menu.model.dto.MenuDTO">
-        DELETE
-            FROM TBL_MENU
+        DELETE FROM TBL_MENU
             WHERE MENU_CODE = #{code}
     </delete>
 
