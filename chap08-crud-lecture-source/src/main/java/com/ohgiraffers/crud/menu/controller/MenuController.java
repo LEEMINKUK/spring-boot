@@ -44,6 +44,7 @@ public class MenuController {
 
     @GetMapping("/regist")
     public void registPage(){}
+
     @PostMapping("/regist")
     public String registMenu(MenuDTO newMenu , RedirectAttributes rttr){
 
