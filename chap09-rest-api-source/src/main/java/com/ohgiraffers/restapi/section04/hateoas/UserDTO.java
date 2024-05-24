@@ -1,19 +1,14 @@
-package com.ohgiraffers.restapi.section02.responseentity;
-
-import io.swagger.v3.oas.annotations.media.Schema;
+package com.ohgiraffers.restapi.section04.hateoas;
 
 import java.util.Date;
 
-@Schema(description = "1111")
 public class UserDTO {
 
-    @Schema(description = "22222")
     private int no;
     private String id;
     private String pwd;
     private String name;
     private Date enrollDate;
-
 
     public UserDTO() {}
 

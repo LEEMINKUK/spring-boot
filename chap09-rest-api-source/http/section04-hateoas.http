@@ -1,0 +1,3 @@
+GET http://localhost:8080/hateoas/users
+###
+GET http://localhost:8080/hateoas/users/1

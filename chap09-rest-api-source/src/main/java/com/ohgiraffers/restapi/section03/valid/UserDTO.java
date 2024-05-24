@@ -1,19 +1,28 @@
-package com.ohgiraffers.restapi.section02.responseentity;
+package com.ohgiraffers.restapi.section03.valid;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 
 import java.util.Date;
 
-@Schema(description = "1111")
 public class UserDTO {
 
-    @Schema(description = "22222")
     private int no;
+
+    @NotNull(message = "아이디는 반드시 입력 되어야 함.")
+    @NotBlank(message = "아이디에 공백 포함xxxx ")
     private String id;
     private String pwd;
+    @NotNull(message = "이름은 반드시 입력되어야 합니다.")
+    @Size(min = 2,message = "이름은 2글자 이상 입력해야 합니다.")
     private String name;
-    private Date enrollDate;
 
+
+    // @Past 현재 날짜 보다 미래를 선택 못하게 검증 하는 부분
+    @Past
+    private Date enrollDate;
 
     public UserDTO() {}
 

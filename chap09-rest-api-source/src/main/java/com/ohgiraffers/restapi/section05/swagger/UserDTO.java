@@ -1,19 +1,21 @@
-package com.ohgiraffers.restapi.section02.responseentity;
+package com.ohgiraffers.restapi.section05.swagger;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.Date;
-
-@Schema(description = "1111")
+@Schema(description = "회원 정보 DTO")
 public class UserDTO {
 
-    @Schema(description = "22222")
+    @Schema(description = "회원번호(PK)")
     private int no;
+    @Schema(description = "회원 ID")
     private String id;
+    @Schema(description = "회원 비밀번호")
     private String pwd;
+    @Schema(description = "회원 이름")
     private String name;
+    @Schema(description = "회원 등록일")
     private Date enrollDate;
-
 
     public UserDTO() {}
 
