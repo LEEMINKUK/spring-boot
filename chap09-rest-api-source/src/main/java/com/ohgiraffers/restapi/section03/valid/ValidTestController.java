@@ -3,6 +3,7 @@ package com.ohgiraffers.restapi.section03.valid;
 
 import com.ohgiraffers.restapi.section02.responseentity.ResponseMessage;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -13,7 +14,7 @@ import java.net.URI;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.util.stream.Collectors;
-
+@Tag(name = "Spring Boot Valid 연동 (USER) ")
 @RestController
 @RequestMapping("/valid")
 public class ValidTestController {

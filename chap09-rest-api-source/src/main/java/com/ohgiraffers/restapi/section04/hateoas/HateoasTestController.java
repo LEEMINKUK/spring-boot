@@ -1,5 +1,6 @@
 package com.ohgiraffers.restapi.section04.hateoas;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-
+@Tag(name = "Spring Boot Hateoas 연동 (USER) ")
 @RestController
 @RequestMapping("/hateoas")
 public class HateoasTestController {
